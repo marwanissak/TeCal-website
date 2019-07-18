@@ -1,0 +1,14 @@
+﻿
+
+ul
+a student list: 
+each obj in mongoose
+
+    li Name :#{obj.title}
+    li Pass #{obj.pass} 
+    li Points: #{obj.points} 
+    a ------------------------------
+    p
+    a ------------------------------
+
+    

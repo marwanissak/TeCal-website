@@ -1,0 +1,14 @@
+{
+  "name": "tecal",
+  "version": "0.0.0",
+  "description": "Tecal",
+  "main": "app.js",
+  "author": {
+    "name": "marwanissak"
+  },
+  "dependencies": {
+    "express": "3.4.4",
+    "jade": "*",
+    "stylus": "*"
+  }
+}

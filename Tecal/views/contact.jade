@@ -1,0 +1,193 @@
+doctype html
+html
+  head
+    title
+      | Give me a number
+    style.
+      div.Wrong_right_picture
+      {
+      position:absolute;
+      top: 40%;
+      left: 80%;
+      }
+      div.math_sign
+      {
+      position:absolute;
+      top: 55%;
+      left: 46%;
+      }
+      div.first_num
+      {
+      position:absolute;
+      top: 48%;
+      left: 40%;
+      font-size:70px;
+      }
+      div.second_num
+      {
+      position:absolute;
+      top: 48%;
+      left: 50%;
+      font-size:70px;
+      }
+      div.genereate_nuber_picture
+      {
+      position:absolute;
+      top: 50%;
+      left: 10%;
+      }
+      div.result_textbox
+      {
+      position:absolute;
+      top: 50%;
+      left: 62%;
+      }
+      div.Submit_button
+      {
+      position:absolute;
+      top: 70%;
+      left: 46%;
+      }
+      .button1 {
+      background-color: white;
+      color: black;
+      border: 2px solid #578CA1;
+      }
+      .button1:hover {
+      background-color: #578CA1;
+      color: white;
+      }
+      .button2 {
+      background-color: white;
+      color: black;
+      border: 2px solid #578CA1;
+      }
+      .button2:hover {
+      background-color: #578CA1;
+      color: white;
+      }
+      .button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      cursor: pointer;
+      }
+    script.
+      var number1_input_user;
+      var number2_input_user;
+      var number_by_user;
+      var sign = 1;
+      function sign_choice(val)
+      {
+      sign = val;
+
+      }
+      function save2() {
+      number_by_user = document.getElementById("number2").value;
+      serachname.inneHTML = document.getElementById("number2").value;
+      // Do whatever you want with the value here.
+      }
+      function domath() {
+      var img = document.getElementById("image");
+      number1_input_user = Math.floor(Math.random() * 10) + 1;
+      number2_input_user = Math.floor(Math.random() * 10) + 1;
+      first.innerHTML = number1_input_user ;
+      second.innerHTML = number2_input_user + ' = ';
+      }
+      function checkmath(number1_in, number2_in, sign, resulta) {
+      var img = document.getElementById("image");
+      var xnum = number1_in;
+      var ynum = number2_in;
+      var result = resulta;
+      console.log("done");
+      switch(+sign) {
+      case 1:
+      if (xnum + ynum == result)
+      {
+      img.src = "https://img.clipartfest.com/7992e481c2c15380ae6a2a826b94ae1a_-check-mark-symbol-correct-symbol-clipart_600-461.png";
+      }
+      else
+      {
+      img.src = "https://img.clipartfest.com/eb9937be2e77147dafe761d78241354c_wrong-sign-clipart-best-wrong-sign-clipart_600-600.png";
+      }
+      break;
+      case 2:
+      if(xnum * ynum == result)
+      {
+      img.src = "https://img.clipartfest.com/7992e481c2c15380ae6a2a826b94ae1a_-check-mark-symbol-correct-symbol-clipart_600-461.png";
+      }
+      else
+      {
+      img.src = "https://img.clipartfest.com/eb9937be2e77147dafe761d78241354c_wrong-sign-clipart-best-wrong-sign-clipart_600-600.png";
+      }
+      break;
+      case 3:
+      if(xnum - ynum == result)
+      {
+      img.src = "https://img.clipartfest.com/7992e481c2c15380ae6a2a826b94ae1a_-check-mark-symbol-correct-symbol-clipart_600-461.png";
+      }
+      else
+      {
+      img.src = "https://img.clipartfest.com/eb9937be2e77147dafe761d78241354c_wrong-sign-clipart-best-wrong-sign-clipart_600-600.png";
+      }
+      break;
+      case 4:
+      if(xnum / ynum == result)
+      {
+      img.src = "https://img.clipartfest.com/7992e481c2c15380ae6a2a826b94ae1a_-check-mark-symbol-correct-symbol-clipart_600-461.png";
+      }
+      else
+      {
+      img.src = "https://img.clipartfest.com/eb9937be2e77147dafe761d78241354c_wrong-sign-clipart-best-wrong-sign-clipart_600-600.png";
+      }
+      break;
+      default:
+      break;
+      }
+      }
+  body(onload='domath()')
+        ul
+        a student list: 
+        each obj in mongoose
+            if (obj.title == serachname)
+
+                    li Id :#{obj.id}
+                    li Name :#{obj.title}
+                    li Pass #{obj.pass} 
+                    li Points: #{obj.points} 
+                    a ------------------------------
+                    p
+                    a ------------------------------
+
+    .genereate_nuber_picture
+      img#generate(width='75', height='50', src='http://i.imgur.com/0JbmSoU.png', onclick='domath()')
+    .Submit_button
+      button#submit.button.button2(onclick='checkmath(number1_input_user, number2_input_user, sign, number_by_user)') Submit! 
+    .first_num
+      output#first
+    .second_num
+      output#second
+    .result_textbox
+      p
+        input#number2(type='text', onblur='save2()')
+    .math_sign
+      select#selectBox(onchange='sign_choice(value)')
+        option(value='1') +
+        option(value='2') *
+        option(value='3') -
+        option(value='4') /
+    .Wrong_right_picture
+      img#image(width='200', height='200')
+
+
+      
+
+    

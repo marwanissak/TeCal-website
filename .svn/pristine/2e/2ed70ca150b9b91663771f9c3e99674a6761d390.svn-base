@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <title></title>
+</head>
+<body>
+
+    <form action="/new" method="post">
+        <label for="name">Student name:</label>
+        <input type="text" name="name"/><br>
+        <label for="pass">Student pass:</label>
+        <input type="number" name="pass" /><br>
+        <input type="submit"/>
+
+
+
+    </form>
+
+
+</body>
+</html>
